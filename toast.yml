@@ -1,0 +1,20 @@
+image: ubuntu
+tasks:
+  install_node:
+    command: |
+      apt-get update
+      apt-get install --yes nodejs npm
+      npm install -g elm
+
+
+  run:
+    cache:
+      false
+    dependencies:
+      - install_node
+    mount_paths:
+      - ./elm.json
+      - ./src
+    ports:
+      - 3000:8000 # Expose port 80 in the container as port 3000 on the host.
+    command: elm reactor
