@@ -1,4 +1,4 @@
-# Development with toast
+# Elm development with toast
 
 This project wraps an Elm Development environment using [toast](https://github.com/stepchowfun/toast).
 
